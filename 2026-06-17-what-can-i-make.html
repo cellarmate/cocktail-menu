@@ -1,0 +1,1443 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What You Can Make - June 17, 2026</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fbfaf7;
+      --panel: #ffffff;
+      --ink: #1f2933;
+      --muted: #667085;
+      --line: #e4dfd6;
+      --accent: #9a4f2f;
+      --accent-soft: #f4e4d9;
+      --good: #1f7a4d;
+      --warn: #a15c00;
+      --creative: #6f4ca5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.45;
+    }
+
+    main {
+      width: min(1120px, calc(100% - 32px));
+      margin: 32px auto 56px;
+    }
+
+    header {
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 34px;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 34px 0 14px;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .dek {
+      max-width: 820px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 3px 9px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      white-space: nowrap;
+    }
+
+    .badge.exact {
+      background: #def7ec;
+      color: var(--good);
+    }
+
+    .badge.close {
+      background: #fff3d6;
+      color: var(--warn);
+    }
+
+    .badge.variant,
+    .badge.creative {
+      background: #eee7fb;
+      color: var(--creative);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th,
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+    }
+
+    th {
+      background: #f3efe8;
+      color: #344054;
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .spec-table {
+      margin: 12px 0;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .substitution {
+      margin: 8px 0 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .card-grid {
+      margin-top: 16px;
+    }
+
+    .callout-list {
+      display: grid;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .callout {
+      border-left: 3px solid var(--accent);
+      padding: 8px 10px;
+      background: #fbf6f0;
+      color: #3f332c;
+      font-size: 14px;
+    }
+
+    .callout.missing {
+      border-left-color: var(--warn);
+      background: #fff8e8;
+    }
+
+    .callout.sub {
+      border-left-color: var(--creative);
+      background: #f5f0ff;
+    }
+
+    .card-subhead {
+      margin: 14px 0 6px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .ingredient-missing {
+      color: var(--warn);
+      font-weight: 700;
+    }
+
+    .section-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    @media (max-width: 720px) {
+      main {
+        width: min(100% - 20px, 1120px);
+        margin-top: 20px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>What You Can Make Tonight</h1>
+      <p class="dek">Built from the current bar inventory, the logged Elder Fashion Royale riff, the 9/10 Division Bell-style Select Mezcal, and a fresh deterministic query of exact, reasonable, and near-match recipes. The strongest direction is citrus, sparkling wine, rum, gin, elderflower, and bitter aperitivo riffs.</p>
+    </header>
+
+    <section>
+      <h2>Top Picks</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Pick</th>
+            <th>Status</th>
+            <th>Why</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Airmail</td>
+            <td><span class="badge exact">exact</span></td>
+            <td>Best exact match: light rum, lime, honey, and sparkling wine. Bright, fast, and more interesting than a plain sour.</td>
+          </tr>
+          <tr>
+            <td>Jovencourt Daiquiri</td>
+            <td><span class="badge exact">exact</span></td>
+            <td>Rum daiquiri structure with a small mezcal accent. It uses the current bar especially well.</td>
+          </tr>
+          <tr>
+            <td>Elder Fashion Royale</td>
+            <td><span class="badge variant">variant</span></td>
+            <td>Worth revisiting after the logged 7.8/10 riff, but closer to the book-style balance: use orange bitters instead of Campari and less St-Germain.</td>
+          </tr>
+          <tr>
+            <td>Division Bell-Style Select Mezcal</td>
+            <td><span class="badge variant">variant</span></td>
+            <td>A strong soft-bartender pick: mezcal, lime, maraschino, and Select make a bitter-citrus sour with good structure.</td>
+          </tr>
+          <tr>
+            <td>Honeysuckle</td>
+            <td><span class="badge exact">exact</span></td>
+            <td>A simple exact rum, lime, and honey sour for when you want the Airmail flavor family without bubbles.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Recipe Specs</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Airmail</h3>
+          <div class="meta">
+            <span class="badge exact">exact</span>
+            <span>Glass: flute</span>
+            <span>Method: shaken</span>
+          </div>
+          <p class="note">A sparkling rum sour built on lime and honey.</p>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Ingredient</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1 oz</td>
+                <td>Rum</td>
+                <td>Use Diplomatico Planas.</td>
+              </tr>
+              <tr>
+                <td>1/2 oz</td>
+                <td>Lime juice</td>
+                <td>Fresh squeezed.</td>
+              </tr>
+              <tr>
+                <td>1/2 oz</td>
+                <td>Honey syrup</td>
+                <td>House honey syrup.</td>
+              </tr>
+              <tr>
+                <td>Top</td>
+                <td>Sparkling wine</td>
+                <td>Use dry sparkling wine.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Instructions: Shake rum, lime, and honey syrup with ice. Strain into a flute and top with sparkling wine.</p>
+        </article>
+
+        <article class="card">
+          <h3>Jovencourt Daiquiri</h3>
+          <div class="meta">
+            <span class="badge exact">exact</span>
+            <span>Glass: coupe</span>
+            <span>Method: shaken</span>
+          </div>
+          <p class="note">A daiquiri variation with a small smoky mezcal accent.</p>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Ingredient</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2 oz</td>
+                <td>White/light rum</td>
+                <td>Use Diplomatico Planas.</td>
+              </tr>
+              <tr>
+                <td>1/4 oz</td>
+                <td>Mezcal</td>
+                <td>Use 400 Conejos.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td>Lime juice</td>
+                <td>Fresh squeezed.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td>Simple syrup</td>
+                <td>House simple syrup.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Instructions: Shake all ingredients with ice, then strain into a coupe.</p>
+        </article>
+
+        <article class="card">
+          <h3>Elder Fashion Royale</h3>
+          <div class="meta">
+            <span class="badge variant">variant</span>
+            <span>Glass: flute</span>
+            <span>Method: stirred</span>
+          </div>
+          <p class="note">A sparkling gin and elderflower old-fashioned variation.</p>
+          <p class="substitution"><strong>Substitution:</strong> Plymouth gin -&gt; Harahorn gin. This keeps the gin structure but changes the botanical profile.</p>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Ingredient</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1 1/2 oz</td>
+                <td>Harahorn gin</td>
+                <td>Sub for Plymouth gin.</td>
+              </tr>
+              <tr>
+                <td>1/2 oz</td>
+                <td>St-Germain</td>
+                <td>Use the tighter book-style amount.</td>
+              </tr>
+              <tr>
+                <td>1 dash</td>
+                <td>Orange bitters</td>
+                <td>Use Fee Brothers orange bitters.</td>
+              </tr>
+              <tr>
+                <td>Top</td>
+                <td>Sparkling wine</td>
+                <td>Dry sparkling wine.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Instructions: Stir gin, St-Germain, and bitters with ice. Strain into a flute, top with sparkling wine, and add a grapefruit twist if available.</p>
+        </article>
+
+        <article class="card">
+          <h3>Division Bell-Style Select Mezcal</h3>
+          <div class="meta">
+            <span class="badge variant">variant</span>
+            <span>Glass: coupe</span>
+            <span>Method: shaken</span>
+          </div>
+          <p class="note">A mezcal, lime, maraschino, and bitter aperitivo sour.</p>
+          <p class="substitution"><strong>Substitution:</strong> Aperol -&gt; Select Aperitivo. Select is more bitter and herbal than Aperol, so keep the maraschino at 1/2 oz for balance.</p>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Ingredient</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1 1/2 oz</td>
+                <td>Mezcal</td>
+                <td>Use 400 Conejos.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td>Select Aperitivo</td>
+                <td>Sub for Aperol; more bitter and herbal.</td>
+              </tr>
+              <tr>
+                <td>1/2 oz</td>
+                <td>Maraschino liqueur</td>
+                <td>Use Luxardo.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td>Lime juice</td>
+                <td>Fresh squeezed.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Instructions: Shake all ingredients with ice, then strain into a coupe. If it lands too bitter, reduce Select to 1/2 oz next time.</p>
+        </article>
+
+        <article class="card">
+          <h3>Honeysuckle</h3>
+          <div class="meta">
+            <span class="badge exact">exact</span>
+            <span>Glass: coupe</span>
+            <span>Method: shaken</span>
+          </div>
+          <p class="note">A rum sour with lime and honey syrup.</p>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Ingredient</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2 oz</td>
+                <td>White/light rum</td>
+                <td>Use Diplomatico Planas.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td>Lime juice</td>
+                <td>Fresh squeezed.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td>Honey syrup</td>
+                <td>House honey syrup.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Instructions: Shake all ingredients with ice, strain into a coupe, and garnish with a lime wedge if you want the aroma.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Made Cocktails</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Drink</th>
+            <th>Rating</th>
+            <th>What Was Made</th>
+            <th>What To Learn</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Elder Fashion Royale Variant</td>
+            <td>7.8/10</td>
+            <td>1.5 oz gin; 0.75 oz St-Germain; scant 0.25 oz Campari; topped with sparkling wine.</td>
+            <td>The elderflower, gin, bitter, and sparkling direction works. Try it closer to the original balance with 0.5 oz St-Germain and orange bitters instead of Campari.</td>
+          </tr>
+          <tr>
+            <td>Division Bell-Style Select Mezcal</td>
+            <td>9/10</td>
+            <td>1.5 oz mezcal; 0.75 oz Select Aperitivo; 0.5 oz Luxardo maraschino; 0.75 oz lime.</td>
+            <td>Very strong signal for smoky agave, lime, maraschino, and bitter aperitivo drinks. Repeat this spec and use Select confidently in Aperol-style agave sours.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Substitution Candidates</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Drink</th>
+            <th>Status</th>
+            <th>Substitution</th>
+            <th>Tradeoff</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>French 75</td>
+            <td><span class="badge variant">variant</span></td>
+            <td>Plymouth gin -&gt; Harahorn gin; cane sugar syrup -&gt; simple syrup.</td>
+            <td>Still very makeable. Harahorn changes the gin profile; simple syrup is cleaner and less cane-rich.</td>
+          </tr>
+          <tr>
+            <td>Daiquiri</td>
+            <td><span class="badge close">close</span></td>
+            <td>Cane sugar syrup -&gt; simple syrup.</td>
+            <td>Cleaner and a little less deep, but structurally sound.</td>
+          </tr>
+          <tr>
+            <td>Live Free Or Die</td>
+            <td><span class="badge variant">variant</span></td>
+            <td>Plymouth gin -&gt; Harahorn gin.</td>
+            <td>Sparkling gin sour with Cointreau and maraschino. Likely tasty, but sweeter than the top picks.</td>
+          </tr>
+          <tr>
+            <td>La Dolce Vita</td>
+            <td><span class="badge variant">variant</span></td>
+            <td>Rye whiskey -&gt; Barrell Foundation bourbon.</td>
+            <td>Rounder, sweeter, and less spicy. Use the higher-proof bourbon to stand up to Campari and St-Germain.</td>
+          </tr>
+          <tr>
+            <td>Paper Plane-ish</td>
+            <td><span class="badge creative">creative</span></td>
+            <td>Amaro Nonino -&gt; Amaro Montenegro; Aperol -&gt; Select Aperitivo.</td>
+            <td>Not book-exact, but bourbon, lemon, Montenegro, and Select should make a balanced bittersweet sour.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="grid card-grid">
+        <article class="card">
+          <h3>French 75</h3>
+          <div class="meta">
+            <span class="badge variant">variant</span>
+            <span>Glass: flute</span>
+            <span>Method: shaken</span>
+          </div>
+          <p class="note">A sparkling gin sour. This version keeps the structure but uses the bottles and syrup on hand.</p>
+          <div class="callout-list">
+            <div class="callout sub"><strong>Substitution:</strong> Plymouth gin -&gt; Harahorn gin. More distinctive botanicals than Plymouth.</div>
+            <div class="callout sub"><strong>Substitution:</strong> cane sugar syrup -&gt; simple syrup. Cleaner and less cane-rich.</div>
+          </div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Ingredient</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1 1/2 oz</td>
+                <td>Harahorn gin</td>
+                <td>Sub for Plymouth gin.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td>Lemon juice</td>
+                <td>Fresh squeezed.</td>
+              </tr>
+              <tr>
+                <td>1/2 oz</td>
+                <td>Simple syrup</td>
+                <td>Sub for cane sugar syrup.</td>
+              </tr>
+              <tr>
+                <td>Top</td>
+                <td>Sparkling wine</td>
+                <td>Dry sparkling wine.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Instructions: Shake gin, lemon, and syrup with ice. Strain into a flute, top with sparkling wine, and add a lemon twist if available.</p>
+        </article>
+
+        <article class="card">
+          <h3>Daiquiri</h3>
+          <div class="meta">
+            <span class="badge close">close</span>
+            <span>Glass: coupe</span>
+            <span>Method: shaken</span>
+          </div>
+          <p class="note">The clean white-rum classic, with simple syrup standing in for cane syrup.</p>
+          <div class="callout-list">
+            <div class="callout sub"><strong>Substitution:</strong> cane sugar syrup -&gt; simple syrup. Cleaner and a little less deep, but structurally sound.</div>
+          </div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Ingredient</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2 oz</td>
+                <td>Diplomatico Planas</td>
+                <td>White/light rum.</td>
+              </tr>
+              <tr>
+                <td>1 oz</td>
+                <td>Lime juice</td>
+                <td>Fresh squeezed.</td>
+              </tr>
+              <tr>
+                <td>1/2 oz</td>
+                <td>Simple syrup</td>
+                <td>Sub for cane sugar syrup.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Instructions: Shake all ingredients with ice, strain into a coupe, and garnish with a lime wedge if you want it.</p>
+        </article>
+
+        <article class="card">
+          <h3>Live Free Or Die</h3>
+          <div class="meta">
+            <span class="badge variant">variant</span>
+            <span>Glass: coupe</span>
+            <span>Method: shaken</span>
+          </div>
+          <p class="note">A sparkling gin sour with Cointreau and maraschino. Sweet, bright, and a little ornate.</p>
+          <div class="callout-list">
+            <div class="callout sub"><strong>Substitution:</strong> Plymouth gin -&gt; Harahorn gin. The drink remains gin-led but less soft than the original.</div>
+          </div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Ingredient</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1 oz</td>
+                <td>Harahorn gin</td>
+                <td>Sub for Plymouth gin.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td>Cointreau</td>
+                <td>Orange liqueur.</td>
+              </tr>
+              <tr>
+                <td>1/2 oz</td>
+                <td>Luxardo maraschino</td>
+                <td>Adds cherry-almond depth.</td>
+              </tr>
+              <tr>
+                <td>1/2 oz</td>
+                <td>Lemon juice</td>
+                <td>Fresh squeezed.</td>
+              </tr>
+              <tr>
+                <td>Top</td>
+                <td>Sparkling wine</td>
+                <td>Dry sparkling wine.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Instructions: Shake everything except sparkling wine with ice. Strain into a coupe and top with sparkling wine.</p>
+        </article>
+
+        <article class="card">
+          <h3>La Dolce Vita</h3>
+          <div class="meta">
+            <span class="badge variant">variant</span>
+            <span>Glass: double rocks</span>
+            <span>Method: stirred</span>
+          </div>
+          <p class="note">A bitter, floral whiskey drink. Use the higher-proof bourbon to keep it from getting too soft.</p>
+          <div class="callout-list">
+            <div class="callout sub"><strong>Substitution:</strong> rye whiskey -&gt; Barrell Foundation bourbon. Rounder, sweeter, and less spicy than rye.</div>
+          </div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Ingredient</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2 oz</td>
+                <td>Barrell Foundation bourbon</td>
+                <td>Sub for rye whiskey.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td>Campari</td>
+                <td>Bitter modifier.</td>
+              </tr>
+              <tr>
+                <td>1/2 oz</td>
+                <td>St-Germain</td>
+                <td>Floral sweetness.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Instructions: Stir all ingredients over ice, then strain over one large cube in a double rocks glass.</p>
+        </article>
+
+        <article class="card">
+          <h3>Paper Plane-ish</h3>
+          <div class="meta">
+            <span class="badge creative">creative</span>
+            <span>Glass: coupe</span>
+            <span>Method: shaken</span>
+          </div>
+          <p class="note">A bittersweet bourbon sour inspired by the Paper Plane, but no longer trying to be book-exact.</p>
+          <div class="callout-list">
+            <div class="callout sub"><strong>Substitution:</strong> Amaro Nonino -&gt; Amaro Montenegro. Softer, more orange-vanilla, and less dry.</div>
+            <div class="callout sub"><strong>Substitution:</strong> Aperol -&gt; Select Aperitivo. More bitter and herbal.</div>
+          </div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Ingredient</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>3/4 oz</td>
+                <td>Bourbon</td>
+                <td>Use Penelope or Barrell Foundation.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td>Amaro Montenegro</td>
+                <td>Sub for Amaro Nonino.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td>Select Aperitivo</td>
+                <td>Sub for Aperol.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td>Lemon juice</td>
+                <td>Fresh squeezed.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Instructions: Shake all ingredients with ice, then strain into a coupe. If too bitter, drop Select to 1/2 oz next time.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>One Ingredient Away</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Recipe</th>
+            <th>Missing</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Boulevardier</td>
+            <td>Sweet vermouth</td>
+            <td>Highest-leverage purchase for bourbon and Campari stirred drinks.</td>
+          </tr>
+          <tr>
+            <td>Brown Derby</td>
+            <td>Grapefruit juice</td>
+            <td>Easy citrus unlock with bourbon, lemon, and honey already on hand.</td>
+          </tr>
+          <tr>
+            <td>Whiskey Sour</td>
+            <td>Egg white</td>
+            <td>The database recipe requires it. You can still make an off-book no-egg sour, but it is not the exact recipe.</td>
+          </tr>
+          <tr>
+            <td>Yama Blanca</td>
+            <td>Blanc vermouth</td>
+            <td>Would use tequila and falernum nicely.</td>
+          </tr>
+          <tr>
+            <td>Buffalo Soldier</td>
+            <td>Demerara syrup</td>
+            <td>Simple prep unlock for a richer bourbon old-fashioned direction.</td>
+          </tr>
+          <tr>
+            <td>Spaghetti Western</td>
+            <td>Amaro Nonino</td>
+            <td>You have tequila, mezcal, and orange bitters; the amaro is the blocker.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="grid card-grid">
+        <article class="card">
+          <h3>Boulevardier</h3>
+          <div class="meta">
+            <span class="badge close">one away</span>
+            <span>Glass: coupe</span>
+            <span>Method: stirred</span>
+          </div>
+          <p class="note">A bourbon, Campari, and sweet vermouth stirred drink. This is the strongest sweet-vermouth unlock.</p>
+          <div class="callout-list">
+            <div class="callout missing"><strong>Missing:</strong> sweet vermouth.</div>
+            <div class="callout sub"><strong>Substitution:</strong> None recommended from the current bar if you want the drink to read as a Boulevardier.</div>
+          </div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Ingredient</th>
+                <th>Current status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1 1/2 oz</td>
+                <td>Bourbon</td>
+                <td>Available.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td class="ingredient-missing">Sweet vermouth</td>
+                <td>Missing.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td>Campari</td>
+                <td>Available.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Instructions if unlocked: Stir with ice, strain into a coupe, and garnish with a lemon twist if available.</p>
+        </article>
+
+        <article class="card">
+          <h3>Brown Derby</h3>
+          <div class="meta">
+            <span class="badge close">one away</span>
+            <span>Glass: coupe</span>
+            <span>Method: shaken</span>
+          </div>
+          <p class="note">A bourbon, grapefruit, lemon, and honey sour.</p>
+          <div class="callout-list">
+            <div class="callout missing"><strong>Missing:</strong> grapefruit juice.</div>
+            <div class="callout sub"><strong>Substitution:</strong> grapefruit juice -&gt; lemon juice is not recommended here; it turns into a different bourbon sour.</div>
+          </div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Ingredient</th>
+                <th>Current status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2 oz</td>
+                <td>Bourbon</td>
+                <td>Available.</td>
+              </tr>
+              <tr>
+                <td>1 oz</td>
+                <td class="ingredient-missing">Grapefruit juice</td>
+                <td>Missing.</td>
+              </tr>
+              <tr>
+                <td>1 tsp</td>
+                <td>Lemon juice</td>
+                <td>Available.</td>
+              </tr>
+              <tr>
+                <td>1/2 oz</td>
+                <td>Honey syrup</td>
+                <td>Available.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Instructions if unlocked: Shake with ice, strain into a coupe, and garnish with a grapefruit twist if available.</p>
+        </article>
+
+        <article class="card">
+          <h3>Whiskey Sour</h3>
+          <div class="meta">
+            <span class="badge close">one away</span>
+            <span>Glass: double rocks</span>
+            <span>Method: shaken</span>
+          </div>
+          <p class="note">A bourbon sour with egg white texture in the database recipe.</p>
+          <div class="callout-list">
+            <div class="callout missing"><strong>Missing:</strong> egg white.</div>
+            <div class="callout sub"><strong>Substitution:</strong> egg white -&gt; omit. This makes a valid no-egg whiskey sour variant, not the exact listed recipe.</div>
+          </div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Ingredient</th>
+                <th>Current status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2 oz</td>
+                <td>Bourbon</td>
+                <td>Available.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td>Lemon juice</td>
+                <td>Available.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td>Simple syrup</td>
+                <td>Available.</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td class="ingredient-missing">Egg white</td>
+                <td>Missing.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Instructions if unlocked: Dry shake first, then shake with ice and strain over one large cube.</p>
+        </article>
+
+        <article class="card">
+          <h3>Yama Blanca</h3>
+          <div class="meta">
+            <span class="badge close">one away</span>
+            <span>Glass: coupe</span>
+            <span>Method: stirred</span>
+          </div>
+          <p class="note">A tequila and falernum stirred drink that needs blanc vermouth for the soft wine backbone.</p>
+          <div class="callout-list">
+            <div class="callout missing"><strong>Missing:</strong> blanc vermouth.</div>
+            <div class="callout sub"><strong>Substitution:</strong> None recommended from the current bar; sweet or dry vermouth would change the balance.</div>
+          </div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Ingredient</th>
+                <th>Current status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2 oz total</td>
+                <td>Tequila</td>
+                <td>Available, using Espolon blanco as a brighter variant for the reposado/jalapeno-infused calls.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td class="ingredient-missing">Blanc vermouth</td>
+                <td>Missing.</td>
+              </tr>
+              <tr>
+                <td>1/4 oz</td>
+                <td>Falernum</td>
+                <td>Available.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Instructions if unlocked: Stir with ice and strain into a coupe.</p>
+        </article>
+
+        <article class="card">
+          <h3>Buffalo Soldier</h3>
+          <div class="meta">
+            <span class="badge close">one away</span>
+            <span>Glass: double rocks</span>
+            <span>Method: stirred</span>
+          </div>
+          <p class="note">A rich bourbon old-fashioned direction, especially if you prep demerara syrup.</p>
+          <div class="callout-list">
+            <div class="callout missing"><strong>Missing:</strong> demerara syrup.</div>
+            <div class="callout sub"><strong>Substitution:</strong> demerara syrup -&gt; simple syrup. Cleaner and lighter; acceptable as a softer variant.</div>
+          </div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Ingredient</th>
+                <th>Current status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2 oz</td>
+                <td>Bourbon</td>
+                <td>Available.</td>
+              </tr>
+              <tr>
+                <td>1/4 oz</td>
+                <td class="ingredient-missing">Demerara syrup</td>
+                <td>Missing; simple syrup can make a lighter variant.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Instructions if unlocked: Stir bourbon and syrup with ice, then strain over one large cube.</p>
+        </article>
+
+        <article class="card">
+          <h3>Spaghetti Western</h3>
+          <div class="meta">
+            <span class="badge close">one away</span>
+            <span>Glass: old-fashioned</span>
+            <span>Method: stirred</span>
+          </div>
+          <p class="note">An agave stirred drink with tequila, mezcal, amaro, and orange bitters.</p>
+          <div class="callout-list">
+            <div class="callout missing"><strong>Missing:</strong> Amaro Nonino.</div>
+            <div class="callout sub"><strong>Substitution:</strong> Amaro Nonino -&gt; Amaro Montenegro. Softer and sweeter; this becomes a variant.</div>
+          </div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Ingredient</th>
+                <th>Current status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1 oz</td>
+                <td>Tequila</td>
+                <td>Available; Espolon blanco makes it brighter than the reposado call.</td>
+              </tr>
+              <tr>
+                <td>1/2 oz</td>
+                <td>Mezcal</td>
+                <td>Available.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td class="ingredient-missing">Amaro Nonino</td>
+                <td>Missing; Montenegro is a softer variant.</td>
+              </tr>
+              <tr>
+                <td>1 dash</td>
+                <td>Orange bitters</td>
+                <td>Available.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Instructions if unlocked: Stir with ice, strain over one large cube, and garnish with grapefruit twist if available.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Just Missing / Two Away</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Recipe</th>
+            <th>Missing</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Margarita</td>
+            <td>Kosher salt, agave nectar</td>
+            <td>Database-grounded two-away. A Cointreau/simple syrup margarita is a soft variant, not the listed recipe.</td>
+          </tr>
+          <tr>
+            <td>Fitzgerald</td>
+            <td>London dry gin, aromatic bitters</td>
+            <td>Harahorn and orange bitters would change the drink; buy Angostura for a cleaner path.</td>
+          </tr>
+          <tr>
+            <td>Last Word</td>
+            <td>London dry gin, green Chartreuse</td>
+            <td>Chartreuse is the real blocker; you already have maraschino and lime.</td>
+          </tr>
+          <tr>
+            <td>Dark And Stormy</td>
+            <td>Ginger syrup, club soda</td>
+            <td>Requires ginger spice and carbonation; the current rum is also lighter than the usual dark rum profile.</td>
+          </tr>
+          <tr>
+            <td>Martini</td>
+            <td>London dry gin, dry vermouth</td>
+            <td>Dry vermouth opens more gin stirred drinks than the current inventory can support.</td>
+          </tr>
+          <tr>
+            <td>Mojito</td>
+            <td>Mint leaves, aromatic bitters</td>
+            <td>Fresh mint plus Angostura would make this practical.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="grid card-grid">
+        <article class="card">
+          <h3>Margarita</h3>
+          <div class="meta">
+            <span class="badge close">two away</span>
+            <span>Glass: rimmed rocks</span>
+            <span>Method: shaken</span>
+          </div>
+          <p class="note">The listed recipe needs salt and agave nectar. Your tequila, Cointreau, and lime are ready.</p>
+          <div class="callout-list">
+            <div class="callout missing"><strong>Missing:</strong> kosher salt; agave nectar.</div>
+            <div class="callout sub"><strong>Substitution:</strong> agave nectar -&gt; simple syrup. Good enough for a bright house Margarita variant.</div>
+            <div class="callout sub"><strong>Substitution:</strong> kosher salt -&gt; omit. Drinkable, but less savory and less classic.</div>
+          </div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Ingredient</th>
+                <th>Current status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Rim</td>
+                <td class="ingredient-missing">Kosher salt</td>
+                <td>Missing.</td>
+              </tr>
+              <tr>
+                <td>2 oz</td>
+                <td>Tequila</td>
+                <td>Available.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td>Cointreau</td>
+                <td>Available.</td>
+              </tr>
+              <tr>
+                <td>1 oz</td>
+                <td>Lime juice</td>
+                <td>Available.</td>
+              </tr>
+              <tr>
+                <td>1/4 oz</td>
+                <td class="ingredient-missing">Agave nectar</td>
+                <td>Missing; simple syrup makes a variant.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Instructions if unlocked: Rim half the glass, shake with ice, and strain over fresh ice.</p>
+        </article>
+
+        <article class="card">
+          <h3>Fitzgerald</h3>
+          <div class="meta">
+            <span class="badge close">two away</span>
+            <span>Glass: double rocks</span>
+            <span>Method: shaken</span>
+          </div>
+          <p class="note">A gin sour with Angostura. The bitters matter more than they look.</p>
+          <div class="callout-list">
+            <div class="callout missing"><strong>Missing:</strong> London dry gin; aromatic bitters.</div>
+            <div class="callout sub"><strong>Substitution:</strong> London dry gin -&gt; Harahorn gin. Acceptable gin-family variant.</div>
+            <div class="callout sub"><strong>Substitution:</strong> aromatic bitters -&gt; Fee orange bitters is not recommended for the original profile.</div>
+          </div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Ingredient</th>
+                <th>Current status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2 oz</td>
+                <td class="ingredient-missing">London dry gin</td>
+                <td>Harahorn available as a variant.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td>Lemon juice</td>
+                <td>Available.</td>
+              </tr>
+              <tr>
+                <td>1 oz</td>
+                <td>Simple syrup</td>
+                <td>Available.</td>
+              </tr>
+              <tr>
+                <td>2 dashes</td>
+                <td class="ingredient-missing">Aromatic bitters</td>
+                <td>Missing; buy Angostura.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Instructions if unlocked: Shake with ice, strain into a double rocks glass, and garnish with lemon.</p>
+        </article>
+
+        <article class="card">
+          <h3>Last Word</h3>
+          <div class="meta">
+            <span class="badge close">two away</span>
+            <span>Glass: coupe</span>
+            <span>Method: shaken</span>
+          </div>
+          <p class="note">A classic equal-parts gin, Chartreuse, maraschino, and lime drink. Chartreuse is the real blocker.</p>
+          <div class="callout-list">
+            <div class="callout missing"><strong>Missing:</strong> London dry gin; green Chartreuse.</div>
+            <div class="callout sub"><strong>Substitution:</strong> London dry gin -&gt; Harahorn gin. Feasible as a gin-style variant.</div>
+            <div class="callout sub"><strong>Substitution:</strong> green Chartreuse -&gt; no current bar substitute. Do not fake this one with Montenegro or falernum.</div>
+          </div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Ingredient</th>
+                <th>Current status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>3/4 oz</td>
+                <td class="ingredient-missing">London dry gin</td>
+                <td>Harahorn available as a variant.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td class="ingredient-missing">Green Chartreuse</td>
+                <td>Missing.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td>Luxardo maraschino</td>
+                <td>Available.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td>Lime juice</td>
+                <td>Available.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Instructions if unlocked: Shake all ingredients with ice and strain into a coupe.</p>
+        </article>
+
+        <article class="card">
+          <h3>Dark And Stormy</h3>
+          <div class="meta">
+            <span class="badge close">two away</span>
+            <span>Glass: highball</span>
+            <span>Method: shaken</span>
+          </div>
+          <p class="note">A rum, lime, ginger, and soda highball. The current rum is lighter than the expected dark-rum profile.</p>
+          <div class="callout-list">
+            <div class="callout missing"><strong>Missing:</strong> ginger syrup; club soda.</div>
+            <div class="callout sub"><strong>Substitution:</strong> dark rum profile -&gt; Diplomatico Planas. Lighter and cleaner, so the drink will be brighter and less molasses-rich.</div>
+          </div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Ingredient</th>
+                <th>Current status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2 oz</td>
+                <td>Rum</td>
+                <td>Available, but lighter than expected.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td>Lime juice</td>
+                <td>Available.</td>
+              </tr>
+              <tr>
+                <td>1 oz</td>
+                <td class="ingredient-missing">Ginger syrup</td>
+                <td>Missing.</td>
+              </tr>
+              <tr>
+                <td>Top</td>
+                <td class="ingredient-missing">Club soda</td>
+                <td>Missing.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Instructions if unlocked: Shake rum, lime, and ginger syrup briefly, strain over ice, and top with club soda.</p>
+        </article>
+
+        <article class="card">
+          <h3>Martini</h3>
+          <div class="meta">
+            <span class="badge close">two away</span>
+            <span>Glass: martini</span>
+            <span>Method: stirred</span>
+          </div>
+          <p class="note">A classic gin and dry vermouth stirred drink. This is where gin style and vermouth freshness are very exposed.</p>
+          <div class="callout-list">
+            <div class="callout missing"><strong>Missing:</strong> London dry gin; dry vermouth.</div>
+            <div class="callout sub"><strong>Substitution:</strong> London dry gin -&gt; Harahorn gin. Possible, but the result is a Harahorn Martini variant.</div>
+            <div class="callout sub"><strong>Substitution:</strong> dry vermouth -&gt; no current bar substitute.</div>
+          </div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Ingredient</th>
+                <th>Current status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2 1/2 oz</td>
+                <td class="ingredient-missing">London dry gin</td>
+                <td>Harahorn available as a variant.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td class="ingredient-missing">Dry vermouth</td>
+                <td>Missing.</td>
+              </tr>
+              <tr>
+                <td>1 dash</td>
+                <td>Orange bitters</td>
+                <td>Available.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Instructions if unlocked: Stir with ice, strain into a martini glass, and garnish with a lemon twist.</p>
+        </article>
+
+        <article class="card">
+          <h3>Mojito</h3>
+          <div class="meta">
+            <span class="badge close">two away</span>
+            <span>Glass: double rocks</span>
+            <span>Method: shaken</span>
+          </div>
+          <p class="note">A minty rum, lime, and sugar drink. It is not worth forcing without fresh mint.</p>
+          <div class="callout-list">
+            <div class="callout missing"><strong>Missing:</strong> mint leaves; aromatic bitters.</div>
+            <div class="callout sub"><strong>Substitution:</strong> aromatic bitters -&gt; Fee orange bitters is not equivalent; only use if you want an orange-accented variant.</div>
+          </div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Ingredient</th>
+                <th>Current status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>6 leaves</td>
+                <td class="ingredient-missing">Mint leaves</td>
+                <td>Missing.</td>
+              </tr>
+              <tr>
+                <td>3/4 oz</td>
+                <td>Simple syrup</td>
+                <td>Available.</td>
+              </tr>
+              <tr>
+                <td>2 oz</td>
+                <td>Rum</td>
+                <td>Available.</td>
+              </tr>
+              <tr>
+                <td>1 oz</td>
+                <td>Lime juice</td>
+                <td>Available.</td>
+              </tr>
+              <tr>
+                <td>2 drops</td>
+                <td class="ingredient-missing">Aromatic bitters</td>
+                <td>Missing; buy Angostura.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Instructions if unlocked: Gently muddle mint with syrup, add the rest, whip shake, dump over crushed ice, and garnish with mint.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Best Next Prep Or Purchase</h2>
+      <div class="card">
+        <ul>
+          <li><strong>Buy Angostura bitters.</strong> It unlocks or improves Fitzgerald, Mojito, Whiskey Sour garnish, and many whiskey or rum templates. Orange bitters are not a direct substitute.</li>
+          <li><strong>Buy sweet vermouth.</strong> Biggest stirred-drink unlock with your bourbon, Campari, rum, mezcal, and orange bitters.</li>
+          <li><strong>Buy grapefruit or grapefruit juice.</strong> Brown Derby becomes exact, and grapefruit twists improve Elder Fashion Royale.</li>
+          <li><strong>Make demerara or cane syrup.</strong> Cheap prep that converts several close matches into stronger exact or near-exact builds.</li>
+          <li><strong>Buy mint if you want Juleps or Mojitos.</strong> Mint Julep is database-exact because mint is treated as garnish, but practically it is not worth making without mint.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
